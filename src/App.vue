@@ -5,7 +5,7 @@
         <v-col class="px-16 text-center" md="6">
           <v-avatar
           class="mb-1"
-          image="./assets/avatar.jpg"
+          image="./assets/homePage/logoEmpresa.jpg"
           ></v-avatar>
 
           <h1>titulo</h1>
@@ -56,26 +56,34 @@
           class="mx-auto"
           width="500"
           height="500"
-          src="./assets/avatar.jpg"
+          src="./assets/homePage/logoEmpresa.jpg"
           ></v-img>
         </v-col>
       </v-row>
 
-      <v-row class="h-screen align-center" id="servicos">
-        <v-col md="12">
+      <v-row class="h-screen justify-center" id="servicos">
+        <v-col class="d-flex align-center justify-center" md="12">
           <h1>Coloque seu cabeçalho aqui!!!</h1>
         </v-col>
 
-        <v-col md="3">
-          <v-img></v-img>
-
-          <h3>servico</h3>
-          <p>descricao</p>
+        <!-- modelo de card para os servicos! -->
+        <v-col class="d-flex justify-center" md="4">
+          <v-card width="300">
+            <v-img
+            src="./assets/servicos/reforma.jpg"
+            ></v-img>
+            <v-card-text class="text-center">
+              <h3 class="mb-2">Reforma</h3>
+              <p>descricao</p>
+            </v-card-text>
+          </v-card>
         </v-col>
       </v-row>
     </v-main>
   </v-app>
 </template>
+
+<!-- utilizar v-window para os cards de servicos e v-carrosel para o show de slides dos projetos!! -->
 
 <script>
   //
@@ -83,7 +91,7 @@
 
 <style>
   .imagem {
-    background-image: url("./assets/home.jpg");
+    background-image: url("./assets/homePage/homeFundo.jpg");
     background-size: cover;
   }
 
