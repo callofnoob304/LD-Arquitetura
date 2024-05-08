@@ -61,21 +61,87 @@
         </v-col>
       </v-row>
 
-      <v-row class="h-screen justify-center" id="servicos">
-        <v-col class="d-flex align-center justify-center" md="12">
-          <h1>Coloque seu cabeçalho aqui!!!</h1>
-        </v-col>
+      <v-row class="h-screen justify-center align-center" id="servicos">
+        <v-col class="text-center" md="10">
+          <h1 class="mb-10">Coloque seu cabeçalho aqui!!!</h1>
 
-        <!-- modelo de card para os servicos! -->
-        <v-col class="d-flex justify-center" md="4">
-          <v-card width="300">
-            <v-img
-            src="./assets/servicos/reforma.jpg"
-            ></v-img>
-            <v-card-text class="text-center">
-              <h3 class="mb-2">Reforma</h3>
-              <p>descricao</p>
-            </v-card-text>
+          <v-card>
+            <v-window v-model="window" show-arrows>
+              <v-window-item :value="1">
+                <v-row class="justify-center py-5">
+                  <v-col class="d-flex justify-center" md="3">
+                    <v-card width="300" flat elevation="8">
+                      <v-img
+                      src="./assets/servicos/reforma.jpg"
+                      ></v-img>
+                      <v-card-text class="text-center">
+                        <h3 class="mb-2">Reforma</h3>
+                        <p>descrição</p>
+                      </v-card-text>
+                    </v-card>
+                  </v-col>
+                  <v-col class="d-flex justify-center" md="3">
+                    <v-card width="300" flat elevation="8">
+                      <v-img
+                      src="./assets/servicos/reforma.jpg"
+                      ></v-img>
+                      <v-card-text class="text-center">
+                        <h3 class="mb-2">Reforma</h3>
+                        <p>descrição</p>
+                      </v-card-text>
+                    </v-card>
+                  </v-col>
+                  <v-col class="d-flex justify-center" md="3">
+                    <v-card width="300" flat elevation="8">
+                      <v-img
+                      src="./assets/servicos/reforma.jpg"
+                      ></v-img>
+                      <v-card-text class="text-center">
+                        <h3 class="mb-2">Reforma</h3>
+                        <p>descrição</p>
+                      </v-card-text>
+                    </v-card>
+                  </v-col>
+                </v-row>
+              </v-window-item>
+              <v-window-item :value="2">
+                <v-row class="justify-center py-5">
+                  <v-col class="d-flex justify-center" md="3">
+                    <v-card width="300" flat elevation="8">
+                      <v-img
+                      src="./assets/servicos/reforma.jpg"
+                      ></v-img>
+                      <v-card-text class="text-center">
+                        <h3 class="mb-2">Reforma</h3>
+                        <p>descrição</p>
+                      </v-card-text>
+                    </v-card>
+                  </v-col>
+                  <v-col class="d-flex justify-center" md="3">
+                    <v-card width="300" flat elevation="8">
+                      <v-img
+                      src="./assets/servicos/reforma.jpg"
+                      ></v-img>
+                      <v-card-text class="text-center">
+                        <h3 class="mb-2">Reforma</h3>
+                        <p>descrição</p>
+                      </v-card-text>
+                    </v-card>
+                  </v-col>
+                  <v-col class="d-flex justify-center" md="3">
+                    <v-card width="300" flat elevation="8">
+                      <v-img
+                      src="./assets/servicos/reforma.jpg"
+                      ></v-img>
+                      <v-card-text class="text-center">
+                        <h3 class="mb-2">Reforma</h3>
+                        <p>descrição</p>
+                      </v-card-text>
+                    </v-card>
+                  </v-col>
+                </v-row>
+              </v-window-item>
+            </v-window>
           </v-card>
         </v-col>
       </v-row>
@@ -86,7 +152,15 @@
 <!-- utilizar v-window para os cards de servicos e v-carrosel para o show de slides dos projetos!! -->
 
 <script>
-  //
+  export default {
+    name: 'WebSite LD-Aquitetura',
+
+    data() {
+      return {
+        window: 1,
+      }
+    },
+  } 
 </script>
 
 <style>
