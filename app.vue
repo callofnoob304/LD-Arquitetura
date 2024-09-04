@@ -45,7 +45,7 @@
 
       <v-row class="h-screen align-center bg-red" id="sobreMim">
         <v-col class="px-16">
-          <h1>Leticya Deffaveri</h1>
+          <h1 class="text-center">Leticya Deffaveri</h1>
 
           <h2 class="mt-10 mb-10">Sobre mim (ela/dela)</h2>
 
@@ -63,10 +63,10 @@
 
       <v-row class="h-screen justify-center align-center" id="servicos">
         <v-col class="text-center" md="10">
-          <h1 class="mb-10">Coloque seu cabeçalho aqui!!!</h1>
+          <h1 class="mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores neque fugit, ratione hic vitae quibusdam quia voluptas enim veniam totam reiciendis odit doloremque praesentium repudiandae eos aperiam voluptatum atque dolorem?</h1>
 
-          <v-card>
-            <v-window v-model="window" show-arrows>
+          <v-card class="bg-cyan" flat>
+            <v-window v-model="window">
               <v-window-item :value="1">
                 <v-row class="justify-center py-5">
                   <v-col class="d-flex justify-center" md="3">
@@ -142,9 +142,69 @@
                 </v-row>
               </v-window-item>
             </v-window>
+            <v-card-actions class="justify-center">
+              <v-pagination
+                v-model="window"
+                :length="2"
+                :total-visible="2"
+                rounded
+                next-icon="mdi-menu-right"
+                prev-icon="mdi-menu-left"
+              ></v-pagination>
+            </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
+
+      <v-row class="h-screen justify-center align-center">
+        <v-col class="text-center">
+          <h1 class="mb-5">Projetos</h1>
+
+          <v-row class="mb-5 justify-center">
+            <v-col md="3">
+              <v-img class="cursor" src="./assets/projetos/foto1/projeto1.webp" @click="abrirFoto('foto1')"/>
+              <v-divider class="mb-5 mt-5" color="#000"></v-divider>
+              <h3>teste askjhdalksjd</h3>
+              <h2>teste askjhdalksjd</h2>
+              <h4>teste askjhdalksjd</h4>
+              <v-divider class="mb-5 mt-5" color="#000"></v-divider>
+            </v-col>
+            <v-col md="3">
+              <v-img class="cursor" src="./assets/projetos/foto2/projeto2.webp" @click="abrirFoto('foto2')"/>
+              <v-divider class="mb-5 mt-5" color="#000"></v-divider>
+              <h3>teste askjhdalksjd</h3>
+              <h2>teste askjhdalksjd</h2>
+              <h4>teste askjhdalksjd</h4>
+              <v-divider class="mb-5 mt-5" color="#000"></v-divider>
+            </v-col>
+            <v-col md="3">
+              <v-img class="cursor" src="./assets/projetos/foto3/projeto3.webp" @click="abrirFoto('foto3')"/>
+              <v-divider class="mb-5 mt-5" color="#000"></v-divider>
+              <h3>teste askjhdalksjd</h3>
+              <h2>teste askjhdalksjd</h2>
+              <h4>teste askjhdalksjd</h4>
+              <v-divider class="mb-5 mt-5" color="#000"></v-divider>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+
+      <v-dialog v-model="dialog" width="1000">
+        <v-card>
+          <v-row>
+            <v-col>
+              <v-carousel>
+                <v-carousel-item
+                v-for="(image, index) in imagensAtuais"
+                :key="index"
+                :src="image"
+                cover
+                ></v-carousel-item>
+              </v-carousel>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-dialog>
     </v-main>
   </v-app>
 </template>
@@ -158,6 +218,32 @@
     data() {
       return {
         window: 1,
+        dialog: false,
+        imagensAtuais: [],
+        imagens: {
+          foto1: [
+            "./assets/projetos/foto1/projeto1.webp",
+            "./assets/projetos/foto1/projeto1.webp",
+            "./assets/projetos/foto1/projeto1.webp",
+          ],
+          foto2: [
+            "./assets/projetos/foto2/projeto2.webp",
+            "./assets/projetos/foto2/projeto2.webp",
+            "./assets/projetos/foto2/projeto2.webp",
+          ],
+          foto3: [
+            "./assets/projetos/foto3/projeto3.webp",
+            "./assets/projetos/foto3/projeto3.webp",
+            "./assets/projetos/foto3/projeto3.webp",
+          ],
+        },
+      }
+    },
+
+    methods: {
+      abrirFoto(foto) {
+        this.imagensAtuais = this.imagens[foto];
+        this.dialog = true;
       }
     },
   } 
@@ -189,4 +275,7 @@
     text-decoration: underline 2px;
   }
 
+  .cursor {
+    cursor: pointer;
+  }
 </style>
