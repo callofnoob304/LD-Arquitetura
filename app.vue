@@ -66,11 +66,11 @@
           <h1 class="mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores neque fugit, ratione hic vitae quibusdam quia voluptas enim veniam totam reiciendis odit doloremque praesentium repudiandae eos aperiam voluptatum atque dolorem?</h1>
 
           <v-card class="bg-cyan" flat>
-            <v-window v-model="window">
+            <v-window v-model="window" show-arrows>
               <v-window-item :value="1">
                 <v-row class="justify-center py-5">
                   <v-col class="d-flex justify-center" md="3">
-                    <v-card width="300" flat elevation="8">
+                    <v-card width="500" flat elevation="8">
                       <v-img
                       src="./assets/servicos/reforma.jpg"
                       ></v-img>
@@ -81,7 +81,7 @@
                     </v-card>
                   </v-col>
                   <v-col class="d-flex justify-center" md="3">
-                    <v-card width="300" flat elevation="8">
+                    <v-card width="500" flat elevation="8">
                       <v-img
                       src="./assets/servicos/reforma.jpg"
                       ></v-img>
@@ -92,7 +92,7 @@
                     </v-card>
                   </v-col>
                   <v-col class="d-flex justify-center" md="3">
-                    <v-card width="300" flat elevation="8">
+                    <v-card width="500" flat elevation="8">
                       <v-img
                       src="./assets/servicos/reforma.jpg"
                       ></v-img>
@@ -107,7 +107,7 @@
               <v-window-item :value="2">
                 <v-row class="justify-center py-5">
                   <v-col class="d-flex justify-center" md="3">
-                    <v-card width="300" flat elevation="8">
+                    <v-card width="500" flat elevation="8">
                       <v-img
                       src="./assets/servicos/reforma.jpg"
                       ></v-img>
@@ -118,7 +118,7 @@
                     </v-card>
                   </v-col>
                   <v-col class="d-flex justify-center" md="3">
-                    <v-card width="300" flat elevation="8">
+                    <v-card width="500" flat elevation="8">
                       <v-img
                       src="./assets/servicos/reforma.jpg"
                       ></v-img>
@@ -129,7 +129,7 @@
                     </v-card>
                   </v-col>
                   <v-col class="d-flex justify-center" md="3">
-                    <v-card width="300" flat elevation="8">
+                    <v-card width="500" flat elevation="8">
                       <v-img
                       src="./assets/servicos/reforma.jpg"
                       ></v-img>
@@ -142,24 +142,13 @@
                 </v-row>
               </v-window-item>
             </v-window>
-            <v-card-actions class="justify-center">
-              <v-pagination
-                v-model="window"
-                :length="2"
-                :total-visible="2"
-                rounded
-                next-icon="mdi-menu-right"
-                prev-icon="mdi-menu-left"
-              ></v-pagination>
-            </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
-
       <v-row class="h-screen justify-center align-center">
         <v-col class="text-center">
           <h1 class="mb-5">Projetos</h1>
-
+          
           <v-row class="mb-5 justify-center">
             <v-col md="3">
               <v-img class="cursor" src="./assets/projetos/foto1/projeto1.webp" @click="abrirFoto('foto1')"/>
@@ -208,8 +197,6 @@
     </v-main>
   </v-app>
 </template>
-
-<!-- utilizar v-window para os cards de servicos e v-carrosel para o show de slides dos projetos!! -->
 
 <script>
   export default {
